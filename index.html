@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pizzeria Da Nonna Rosa — Pizza napoletana a Milano Lambrate</title>
+<meta name="description" content="Pizzeria Da Nonna Rosa a Milano Lambrate: pizza napoletana con lievitazione 48 ore, forno a legna, ingredienti campani. Aperti 7 giorni su 7, anche da asporto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosso:#B4322A; --rosso-scuro:#8E241E; --crema:#FBF6EE; --carta:#F3EADB; --nero:#1E1A17; --grigio:#6B625A; --verde:#25D366;
+    --font-t:"Fraunces",Georgia,serif; --font-b:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-b);color:var(--nero);background:var(--crema);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:var(--font-t);line-height:1.1;letter-spacing:-.01em}
+  h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.6em}
+  .eyebrow{color:var(--rosso);font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;margin-bottom:.8em}
+  section{padding:72px 0}
+  .btn{display:inline-flex;align-items:center;gap:.5em;padding:.9em 1.5em;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+  .btn-rosso{background:var(--rosso);color:#fff}
+  .btn-bianco{background:#fff;color:var(--nero);border:1.5px solid rgba(0,0,0,.1)}
+  .btn-wa{background:var(--verde);color:#fff}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,246,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--font-t);font-weight:800;font-size:1.25rem;text-decoration:none}
+  .logo span{color:var(--rosso)}
+  nav ul{display:flex;gap:1.5em;list-style:none}
+  nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--grigio)}
+  nav ul a:hover{color:var(--nero)}
+  .nav-cta{font-size:.9rem;padding:.6em 1.1em}
+  @media(max-width:720px){nav ul{display:none}}
+
+  /* hero */
+  .hero{padding:80px 0 64px;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:800;margin-bottom:.4em}
+  .hero h1 em{font-style:italic;color:var(--rosso)}
+  .hero p{font-size:1.15rem;color:var(--grigio);max-width:42ch;margin-bottom:1.8em}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-info{margin-top:28px;display:flex;gap:24px;flex-wrap:wrap;font-size:.9rem;color:var(--grigio)}
+  .hero-info b{color:var(--nero);display:block}
+  .pizza{aspect-ratio:1;border-radius:50%;background:
+     radial-gradient(circle at 50% 50%, #F2C14E 0 6%, transparent 6.5%),
+     radial-gradient(circle at 30% 35%, #C8322B 0 9%, transparent 9.5%),
+     radial-gradient(circle at 68% 30%, #C8322B 0 8%, transparent 8.5%),
+     radial-gradient(circle at 70% 68%, #C8322B 0 9%, transparent 9.5%),
+     radial-gradient(circle at 32% 70%, #C8322B 0 8%, transparent 8.5%),
+     radial-gradient(circle at 50% 22%, #3E7A3A 0 3%, transparent 3.5%),
+     radial-gradient(circle at 78% 52%, #3E7A3A 0 3%, transparent 3.5%),
+     radial-gradient(circle at 24% 52%, #3E7A3A 0 3%, transparent 3.5%),
+     radial-gradient(circle at 52% 80%, #3E7A3A 0 3%, transparent 3.5%),
+     radial-gradient(circle at 50% 50%, #F6EBD0 0 40%, #E3B36A 40% 43%, #D08F3C 43% 46%, #B8722A 46% 48%, transparent 48%);
+     background-color:#F0D9A6;box-shadow:0 30px 60px -20px rgba(0,0,0,.35), inset 0 0 0 12px #C97C34;
+     max-width:420px;margin:0 auto;transform:rotate(-8deg)}
+  .badge{position:absolute;right:-8px;bottom:24px;background:var(--nero);color:#fff;border-radius:999px;padding:.6em 1em;font-size:.85rem;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+  .hero-img{position:relative}
+  @media(max-width:720px){.hero .wrap{grid-template-columns:1fr}.hero-img{order:-1}.pizza{max-width:260px}.hero{padding-top:36px}}
+
+  /* chi siamo */
+  .chi{background:var(--carta)}
+  .chi .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .chi p{color:var(--grigio);margin-bottom:1em;font-size:1.05rem}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .stat{background:#fff;border-radius:16px;padding:20px 16px;text-align:center}
+  .stat b{font-family:var(--font-t);font-size:2rem;color:var(--rosso);display:block;line-height:1}
+  .stat span{font-size:.8rem;color:var(--grigio)}
+  @media(max-width:720px){.chi .wrap{grid-template-columns:1fr}}
+
+  /* menu */
+  .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px}
+  .piatto{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px dashed rgba(0,0,0,.15)}
+  .piatto h3{font-size:1.1rem;margin-bottom:.2em}
+  .piatto p{color:var(--grigio);font-size:.92rem}
+  .prezzo{font-family:var(--font-t);font-weight:800;font-size:1.15rem;white-space:nowrap}
+  .tag{display:inline-block;background:var(--rosso);color:#fff;border-radius:6px;font-size:.68rem;padding:2px 7px;margin-left:6px;vertical-align:middle;letter-spacing:.05em}
+  .menu-note{margin-top:32px;color:var(--grigio);font-size:.9rem}
+  @media(max-width:720px){.menu-grid{grid-template-columns:1fr}}
+
+  /* orari + recensioni */
+  .info{background:var(--nero);color:#fff}
+  .info .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:56px}
+  .info .eyebrow{color:#F2C14E}
+  .orari{list-style:none}
+  .orari li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .orari li span:last-child{font-weight:600}
+  .oggi{color:#F2C14E}
+  .rev{display:grid;gap:14px}
+  .card{background:rgba(255,255,255,.07);border-radius:16px;padding:20px}
+  .card .stelle{color:#F2C14E;letter-spacing:2px;font-size:.9rem}
+  .card p{margin:.5em 0;font-size:.98rem}
+  .card small{color:rgba(255,255,255,.6)}
+  @media(max-width:720px){.info .wrap{grid-template-columns:1fr}}
+
+  /* contatti */
+  .contatti .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .contatti p{color:var(--grigio);margin-bottom:1em}
+  .riga{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .riga .ic{width:40px;height:40px;border-radius:12px;background:var(--carta);display:grid;place-items:center;flex-shrink:0;font-size:1.1rem}
+  .riga b{display:block}
+  .riga a{color:var(--grigio);text-decoration:none}
+  .mappa{border-radius:20px;overflow:hidden;background:#E6E0D3;aspect-ratio:4/3;position:relative;display:grid;place-items:center;text-align:center;padding:24px;
+    background-image:linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px);background-size:32px 32px}
+  .pin{font-size:3rem;line-height:1;margin-bottom:8px}
+  @media(max-width:720px){.contatti .wrap{grid-template-columns:1fr}}
+
+  footer{padding:32px 0;text-align:center;color:var(--grigio);font-size:.85rem;border-top:1px solid rgba(0,0,0,.06)}
+
+  /* whatsapp fisso */
+  .wa-fixed{position:fixed;right:18px;bottom:18px;z-index:20;width:58px;height:58px;border-radius:50%;background:var(--verde);display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);text-decoration:none}
+  .wa-fixed svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Da <span>Nonna Rosa</span></a>
+    <ul>
+      <li><a href="#chi">Chi siamo</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#orari">Orari</a></li>
+      <li><a href="#contatti">Dove siamo</a></li>
+    </ul>
+    <a href="tel:+390212345678" class="btn btn-rosso nav-cta">📞 Prenota</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Pizzeria napoletana · Milano Lambrate</div>
+      <h1>La pizza come la faceva <em>Nonna Rosa</em></h1>
+      <p>Impasto a lievitazione lenta 48 ore, forno a legna, pomodoro San Marzano e fior di latte di Agerola. Dal 1987, in via Conte Rosso.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo" class="btn btn-wa">💬 Prenota su WhatsApp</a>
+        <a href="#menu" class="btn btn-bianco">Guarda il menu</a>
+      </div>
+      <div class="hero-info">
+        <div><b>Oggi aperti</b>12:00–14:30 · 19:00–23:30</div>
+        <div><b>Asporto</b>Chiama o scrivi, pronta in 15 min</div>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="pizza" role="img" aria-label="Pizza margherita"></div>
+      <div class="badge">⭐ 4,8 · 312 recensioni Google</div>
+    </div>
+  </div>
+</header>
+
+<section class="chi" id="chi">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Chi siamo</div>
+      <h2>Una famiglia, un forno, tre generazioni</h2>
+      <p>Nonna Rosa è arrivata a Milano da Torre del Greco nel 1962 con una valigia e la ricetta dell'impasto. Nel 1987 ha aperto questo locale, e da allora non è cambiato quasi nulla: il forno è lo stesso, il pomodoro arriva ancora dallo stesso contadino.</p>
+      <p>Oggi in cucina ci sono Marco e Giulia, i nipoti. La ricetta è sempre quella. Le foto sui muri anche.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>48h</b><span>di lievitazione</span></div>
+      <div class="stat"><b>1987</b><span>dal primo giorno</span></div>
+      <div class="stat"><b>450°</b><span>forno a legna</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="eyebrow">Il menu</div>
+    <h2>Poche pizze, fatte bene</h2>
+    <div class="menu-grid">
+      <div class="piatto"><div><h3>Margherita <span class="tag">LA CLASSICA</span></h3><p>San Marzano DOP, fior di latte di Agerola, basilico, olio EVO</p></div><div class="prezzo">8,50 €</div></div>
+      <div class="piatto"><div><h3>Marinara</h3><p>San Marzano, aglio, origano di Pantelleria, olio EVO</p></div><div class="prezzo">6,50 €</div></div>
+      <div class="piatto"><div><h3>Bufala</h3><p>San Marzano, mozzarella di bufala campana DOP, basilico</p></div><div class="prezzo">11,00 €</div></div>
+      <div class="piatto"><div><h3>Diavola</h3><p>San Marzano, fior di latte, salame piccante di Napoli</p></div><div class="prezzo">10,00 €</div></div>
+      <div class="piatto"><div><h3>Nonna Rosa <span class="tag">SPECIALE</span></h3><p>Friarielli, salsiccia di maiale nero, provola affumicata, pepe</p></div><div class="prezzo">12,50 €</div></div>
+      <div class="piatto"><div><h3>Quattro formaggi</h3><p>Fior di latte, gorgonzola, provola, parmigiano 24 mesi</p></div><div class="prezzo">11,00 €</div></div>
+      <div class="piatto"><div><h3>Capricciosa</h3><p>San Marzano, fior di latte, prosciutto cotto, funghi, carciofi, olive</p></div><div class="prezzo">11,50 €</div></div>
+      <div class="piatto"><div><h3>Calzone ripieno</h3><p>Ricotta, salame, fior di latte, pepe nero — chiuso come si deve</p></div><div class="prezzo">10,50 €</div></div>
+    </div>
+    <p class="menu-note">Impasto senza glutine disponibile (+2 €). Fritti, dolci e bevande al banco. Coperto 1,50 €.</p>
+  </div>
+</section>
+
+<section class="info" id="orari">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Orari</div>
+      <h2>Aperti tutti i giorni</h2>
+      <ul class="orari">
+        <li><span>Lunedì</span><span>19:00 – 23:30</span></li>
+        <li><span>Martedì</span><span>12:00 – 14:30 · 19:00 – 23:30</span></li>
+        <li><span>Mercoledì</span><span>12:00 – 14:30 · 19:00 – 23:30</span></li>
+        <li><span>Giovedì</span><span>12:00 – 14:30 · 19:00 – 23:30</span></li>
+        <li><span>Venerdì</span><span>12:00 – 14:30 · 19:00 – 00:00</span></li>
+        <li><span>Sabato</span><span>12:00 – 15:00 · 19:00 – 00:00</span></li>
+        <li><span>Domenica</span><span>12:00 – 15:00 · 19:00 – 23:30</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="eyebrow">Dicono di noi</div>
+      <h2>4,8 su Google</h2>
+      <div class="rev">
+        <div class="card"><div class="stelle">★★★★★</div><p>"La margherita più buona di Milano, e non lo dico da milanese ma da napoletana. Cornicione perfetto."</p><small>Anna R. · 2 settimane fa</small></div>
+        <div class="card"><div class="stelle">★★★★★</div><p>"Posto di quartiere vero, si mangia da dio e si spende il giusto. Prenotate perché è sempre pieno."</p><small>Luca M. · 1 mese fa</small></div>
+        <div class="card"><div class="stelle">★★★★★</div><p>"Asporto in 15 minuti, pizza ancora bollente a casa. La Nonna Rosa coi friarielli è una bomba."</p><small>Federica T. · 1 mese fa</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contatti" id="contatti">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Dove siamo</div>
+      <h2>Vieni a trovarci</h2>
+      <p>A due passi dalla fermata Lambrate M2, con parcheggio in via Conte Rosso la sera.</p>
+      <div class="riga"><div class="ic">📍</div><div><b>Indirizzo</b><a href="https://maps.google.com/?q=Via+Conte+Rosso+12+Milano">Via Conte Rosso 12, 20134 Milano</a></div></div>
+      <div class="riga"><div class="ic">📞</div><div><b>Telefono</b><a href="tel:+390212345678">02 1234 5678</a></div></div>
+      <div class="riga"><div class="ic">💬</div><div><b>WhatsApp</b><a href="https://wa.me/393331234567">333 123 4567</a></div></div>
+      <div class="riga"><div class="ic">📷</div><div><b>Instagram</b><a href="#">@pizzerianonnarosa</a></div></div>
+      <a href="https://maps.google.com/?q=Via+Conte+Rosso+12+Milano" class="btn btn-rosso" style="margin-top:8px">Apri in Google Maps</a>
+    </div>
+    <div class="mappa">
+      <div>
+        <div class="pin">📍</div>
+        <b>Via Conte Rosso 12</b><br>
+        <span style="color:var(--grigio);font-size:.9rem">Milano Lambrate · M2 Lambrate a 3 min a piedi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Pizzeria Da Nonna Rosa · P.IVA 00000000000 · Via Conte Rosso 12, Milano</div>
+</footer>
+
+<a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20prenotare%20un%20tavolo" class="wa-fixed" aria-label="Scrivici su WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.5 0 1.7-.7 2-1.4.2-.7.2-1.3.1-1.4l-.5-.3-1.9-.9c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.4 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4H9z"/></svg>
+</a>
+
+</body>
+</html>
